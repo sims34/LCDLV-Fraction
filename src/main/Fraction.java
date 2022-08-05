@@ -7,6 +7,6 @@ public class Fraction {
     }
 
     public Fraction addition(Fraction f1) {
-        return this;
+        return f1;
     }
 }
