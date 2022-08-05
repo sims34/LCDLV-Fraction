@@ -26,4 +26,15 @@ class AdditionFractionTest {
         //Then
         Assertions.assertEquals(un, result);
     }
+
+    @Test
+    void unPlusZero() {
+        //Given
+        Fraction zero = new Fraction(0);
+        Fraction un = new Fraction(1);
+        //When
+        Fraction result = un.addition(zero);
+        //Then
+        Assertions.assertEquals(un, result);
+    }
 }
