@@ -1,7 +1,6 @@
 package test;
 
 import main.Fraction;
-import org.junit.Ignore;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -71,15 +70,13 @@ class AdditionFractionTest {
         Assertions.assertEquals(new Fraction(3).getNumerateur(), result.getNumerateur());
     }
 
-
     @Test
-    void toRename() {
+    void sommeFractionMemeDenominateur() {
 
         Fraction f1 = new Fraction(3,4);
         Fraction f2 = new Fraction(2,4);
 
         Fraction result = f1.addition(f2);
-
 
         Assertions.assertEquals(5,result.getNumerateur());
         Assertions.assertEquals(4,result.getDenominateur());
