@@ -81,4 +81,6 @@ class AdditionFractionTest {
         Assertions.assertEquals(5,result.getNumerateur());
         Assertions.assertEquals(4,result.getDenominateur());
     }
+
+
 }

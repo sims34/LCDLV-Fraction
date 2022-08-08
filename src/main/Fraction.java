@@ -1,12 +1,14 @@
 package main;
 
+import java.util.Objects;
+
 public class Fraction {
 
     private int numerateur;
     private int denominateur;
 
     public Fraction(int numerateur) {
-        this(numerateur,1);
+        this(numerateur, 1);
     }
 
     public Fraction(int numerateur, int denominateur) {
@@ -15,14 +17,20 @@ public class Fraction {
     }
 
     public Fraction addition(Fraction f1) {
-        return new Fraction(f1.getNumerateur() + this.getNumerateur(),f1.getDenominateur());
+        return new Fraction(f1.getNumerateur() + this.getNumerateur(), f1.getDenominateur());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Fraction)) return false;
+        Fraction fraction = (Fraction) o;
+        return getNumerateur() == fraction.getNumerateur() &&
+                getDenominateur() == fraction.getDenominateur();
     }
 
     @Override
     public String toString() {
-        return "Fraction{" +
-                "numerateur=" + numerateur +
-                '}';
+        return numerateur + "/" + denominateur;
     }
 
     public int getNumerateur() {
