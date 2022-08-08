@@ -29,11 +29,12 @@ public class Fraction {
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof Fraction)) return false;
-        Fraction fraction = Fraction.simplification((Fraction) o);
-        Fraction simplifiedThis = Fraction.simplification(this);
+        Fraction fraction = ((Fraction) o);
+        fraction.simplification();
+        this.simplification();
         if(getNumerateur() == 0 && fraction.getNumerateur() == 0) return true;
-        return simplifiedThis.getNumerateur() == fraction.getNumerateur() &&
-                simplifiedThis.getDenominateur() == fraction.getDenominateur();
+        return this.getNumerateur() == fraction.getNumerateur() &&
+                this.getDenominateur() == fraction.getDenominateur();
     }
 
     @Override
@@ -49,12 +50,13 @@ public class Fraction {
         return denominateur;
     }
 
-    private static Fraction simplification(Fraction f1) {
-        int pgcd = getPGCD(f1);
-        return new Fraction((f1.getNumerateur() / pgcd), f1.getDenominateur() / pgcd);
+    private void simplification() {
+        int pgcd = this.getPGCD();
+        this.numerateur = this.getNumerateur() / pgcd;
+        this.denominateur = this.getDenominateur() / pgcd;
     }
 
-    private static int getPGCD(Fraction f1) {
-        return BigInteger.valueOf(f1.getNumerateur()).gcd(BigInteger.valueOf(f1.getDenominateur())).intValue();
+    private int getPGCD() {
+        return BigInteger.valueOf(this.getNumerateur()).gcd(BigInteger.valueOf(this.getDenominateur())).intValue();
     }
 }
