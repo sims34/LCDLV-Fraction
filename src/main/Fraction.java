@@ -24,6 +24,7 @@ public class Fraction {
     public boolean equals(Object o) {
         if (!(o instanceof Fraction)) return false;
         Fraction fraction = (Fraction) o;
+        if(getNumerateur() == 0 && fraction.getNumerateur() == 0) return true;
         return getNumerateur() == fraction.getNumerateur() &&
                 getDenominateur() == fraction.getDenominateur();
     }
