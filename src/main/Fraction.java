@@ -1,5 +1,6 @@
 package main;
 
+import java.math.BigInteger;
 import java.util.Objects;
 
 public class Fraction {
@@ -28,10 +29,11 @@ public class Fraction {
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof Fraction)) return false;
-        Fraction fraction = (Fraction) o;
+        Fraction fraction = Fraction.simplification((Fraction) o);
+        Fraction simplifiedThis = Fraction.simplification(this);
         if(getNumerateur() == 0 && fraction.getNumerateur() == 0) return true;
-        return getNumerateur() == fraction.getNumerateur() &&
-                getDenominateur() == fraction.getDenominateur();
+        return simplifiedThis.getNumerateur() == fraction.getNumerateur() &&
+                simplifiedThis.getDenominateur() == fraction.getDenominateur();
     }
 
     @Override
@@ -45,5 +47,14 @@ public class Fraction {
 
     public int getDenominateur() {
         return denominateur;
+    }
+
+    private static Fraction simplification(Fraction f1) {
+        int pgcd = getPGCD(f1);
+        return new Fraction((f1.getNumerateur() / pgcd), f1.getDenominateur() / pgcd);
+    }
+
+    private static int getPGCD(Fraction f1) {
+        return BigInteger.valueOf(f1.getNumerateur()).gcd(BigInteger.valueOf(f1.getDenominateur())).intValue();
     }
 }

@@ -28,4 +28,10 @@ class EqualsFractionTest {
                 new Fraction(1, 4));
     }
 
+    @Test
+    void gestionSimplification() {
+        Assertions.assertEquals(new Fraction(3,6), new Fraction(1,2));
+        Assertions.assertEquals(new Fraction(1,2), new Fraction(3,6));
+    }
+
 }
