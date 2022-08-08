@@ -105,13 +105,4 @@ class AdditionFractionTest {
         assertEquals(new Fraction(-26, 21), result);
     }
 
-    @Test
-    void denominateurNul() {
-        try {
-            new Fraction(7,0);
-            fail("Le dénominateur ne peut pas être nul");
-        } catch (Exception e) {
-            Assertions.assertInstanceOf(RuntimeException.class, e);
-        }
-    }
 }
