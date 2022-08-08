@@ -96,4 +96,10 @@ class AdditionFractionTest {
         Fraction result = new Fraction(-2, 3).addition(new Fraction(4, 7));
         Assertions.assertEquals(new Fraction(-2, 21), result);
     }
+    @Test
+    void sommeAvecDeuxNegatif() {
+        Fraction result = new Fraction(-2, 3).addition(new Fraction(-4, 7));
+        Assertions.assertEquals(new Fraction(-26, 21), result);
+    }
+
 }
