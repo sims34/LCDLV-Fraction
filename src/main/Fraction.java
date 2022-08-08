@@ -1,7 +1,6 @@
 package main;
 
 import java.math.BigInteger;
-import java.util.Objects;
 
 public class Fraction {
 
@@ -23,7 +22,7 @@ public class Fraction {
     }
 
     public Fraction addition(Fraction f1) {
-        return new Fraction(f1.getNumerateur() + this.getNumerateur(), f1.getDenominateur());
+        return new Fraction(f1.getNumerateur() * this.getDenominateur() + this.getNumerateur() * f1.getDenominateur(), f1.getDenominateur() * this.getDenominateur());
     }
 
     @Override
