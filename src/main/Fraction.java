@@ -9,10 +9,7 @@ public class Fraction {
     }
 
     public Fraction addition(Fraction f1) {
-        if (f1.numerateur == 0) {
-            return this;
-        }
-        return f1;
+        return new Fraction(f1.getNumerateur() + this.getNumerateur());
     }
 
     @Override
