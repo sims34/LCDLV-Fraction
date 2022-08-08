@@ -85,4 +85,10 @@ class AdditionFractionTest {
         Fraction result = new Fraction(2, 3).addition(new Fraction(3, 2));
         Assertions.assertEquals(new Fraction(13, 6), result);
     }
+
+    @Test
+    void sommeDenominateurDifferentAvecSimplification() {
+        Fraction result = new Fraction(1, 3).addition(new Fraction(1, 6));
+        Assertions.assertEquals(new Fraction(1, 2), result);
+    }
 }

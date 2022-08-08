@@ -19,6 +19,7 @@ public class Fraction {
             this.numerateur = numerateur;
             this.denominateur = denominateur;
         }
+        this.simplification();
     }
 
     public Fraction addition(Fraction f1) {
@@ -29,8 +30,6 @@ public class Fraction {
     public boolean equals(Object o) {
         if (!(o instanceof Fraction)) return false;
         Fraction fraction = ((Fraction) o);
-        fraction.simplification();
-        this.simplification();
         if(getNumerateur() == 0 && fraction.getNumerateur() == 0) return true;
         return this.getNumerateur() == fraction.getNumerateur() &&
                 this.getDenominateur() == fraction.getDenominateur();
