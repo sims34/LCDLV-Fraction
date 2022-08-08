@@ -23,7 +23,8 @@ public class Fraction {
     }
 
     private int determineSign(){
-        return (this.getNumerateur() * this.getDenominateur() >= 0) ? 1 : -1;
+        if (this.getNumerateur() * this.getDenominateur() >= 0) return 1;
+        else return -1;
     }
 
     @Override
