@@ -2,18 +2,27 @@ package main;
 
 public class Fraction {
 
+    private int numerateur;
 
-    private int value;
-
-    public Fraction(int value) {
-
-        this.value = value;
+    public Fraction(int numerateur) {
+        this.numerateur = numerateur;
     }
 
     public Fraction addition(Fraction f1) {
-        if (f1.value == 0) {
+        if (f1.numerateur == 0) {
             return this;
         }
         return f1;
+    }
+
+    @Override
+    public String toString() {
+        return "Fraction{" +
+                "numerateur=" + numerateur +
+                '}';
+    }
+
+    public int getNumerateur() {
+        return numerateur;
     }
 }

@@ -13,7 +13,7 @@ class AdditionFractionTest {
         //When
         Fraction result = zero.addition(zero);
         //Then
-        Assertions.assertEquals(zero, result);
+        Assertions.assertEquals(zero.getNumerateur(), result.getNumerateur());
     }
 
     @Test
@@ -24,7 +24,7 @@ class AdditionFractionTest {
         //When
         Fraction result = zero.addition(un);
         //Then
-        Assertions.assertEquals(un, result);
+        Assertions.assertEquals(un.getNumerateur(), result.getNumerateur());
     }
 
     @Test
@@ -35,6 +35,6 @@ class AdditionFractionTest {
         //When
         Fraction result = un.addition(zero);
         //Then
-        Assertions.assertEquals(un, result);
+        Assertions.assertEquals(un.getNumerateur(), result.getNumerateur());
     }
 }
