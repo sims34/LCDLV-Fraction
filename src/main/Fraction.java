@@ -12,6 +12,7 @@ public class Fraction {
     }
 
     public Fraction(int numerateur, int denominateur) {
+        if (denominateur == 0) throw new RuntimeException("Dénominateur ne peut pas être nul");
         if (denominateur < 0) {
             this.numerateur = -numerateur;
             this.denominateur = - denominateur;

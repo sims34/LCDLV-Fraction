@@ -4,6 +4,9 @@ import main.Fraction;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
+
 class AdditionFractionTest {
 
     @Test
@@ -13,7 +16,7 @@ class AdditionFractionTest {
         //When
         Fraction result = zero.addition(zero);
         //Then
-        Assertions.assertEquals(zero, result);
+        assertEquals(zero, result);
     }
 
     @Test
@@ -24,7 +27,7 @@ class AdditionFractionTest {
         //When
         Fraction result = zero.addition(un);
         //Then
-        Assertions.assertEquals(un, result);
+        assertEquals(un, result);
     }
 
     @Test
@@ -35,7 +38,7 @@ class AdditionFractionTest {
         //When
         Fraction result = un.addition(zero);
         //Then
-        Assertions.assertEquals(un, result);
+        assertEquals(un, result);
     }
 
     @Test
@@ -45,7 +48,7 @@ class AdditionFractionTest {
         //When
         Fraction result = un.addition(un);
         //Then
-        Assertions.assertEquals(new Fraction(2), result);
+        assertEquals(new Fraction(2), result);
     }
 
     @Test
@@ -56,7 +59,7 @@ class AdditionFractionTest {
         //When
         Fraction result = un.addition(deux);
         //Then
-        Assertions.assertEquals(new Fraction(3), result);
+        assertEquals(new Fraction(3), result);
     }
 
     @Test
@@ -67,7 +70,7 @@ class AdditionFractionTest {
         //When
         Fraction result = deux.addition(un);
         //Then
-        Assertions.assertEquals(new Fraction(3), result);
+        assertEquals(new Fraction(3), result);
     }
 
     @Test
@@ -77,29 +80,38 @@ class AdditionFractionTest {
 
         Fraction result = f1.addition(f2);
 
-        Assertions.assertEquals(new Fraction(5, 4), result);
+        assertEquals(new Fraction(5, 4), result);
     }
 
     @Test
     void sommeDenominateurDifferent() {
         Fraction result = new Fraction(2, 3).addition(new Fraction(3, 2));
-        Assertions.assertEquals(new Fraction(13, 6), result);
+        assertEquals(new Fraction(13, 6), result);
     }
 
     @Test
     void sommeDenominateurDifferentAvecSimplification() {
         Fraction result = new Fraction(1, 3).addition(new Fraction(1, 6));
-        Assertions.assertEquals(new Fraction(1, 2), result);
+        assertEquals(new Fraction(1, 2), result);
     }
     @Test
     void sommeAvecNegatif() {
         Fraction result = new Fraction(-2, 3).addition(new Fraction(4, 7));
-        Assertions.assertEquals(new Fraction(-2, 21), result);
+        assertEquals(new Fraction(-2, 21), result);
     }
     @Test
     void sommeAvecDeuxNegatif() {
         Fraction result = new Fraction(-2, 3).addition(new Fraction(-4, 7));
-        Assertions.assertEquals(new Fraction(-26, 21), result);
+        assertEquals(new Fraction(-26, 21), result);
     }
 
+    @Test
+    void denominateurNul() {
+        try {
+            new Fraction(7,0);
+            fail("Le dénominateur ne peut pas être nul");
+        } catch (Exception e) {
+            Assertions.assertInstanceOf(RuntimeException.class, e);
+        }
+    }
 }
