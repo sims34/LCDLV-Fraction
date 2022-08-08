@@ -17,4 +17,15 @@ class EqualsFractionTest {
     void numerateurZero() {
         Assertions.assertEquals(new Fraction(0, 7), new Fraction(0, 4));
     }
+
+    @Test
+    void gestionNegatif() {
+        Assertions.assertEquals(new Fraction(-2, 3),
+                new Fraction(2, -3));
+        Assertions.assertEquals(new Fraction(1, -4 ),
+                new Fraction(-1, 4));
+        Assertions.assertEquals(new Fraction(-1, -4 ),
+                new Fraction(1, 4));
+    }
+
 }

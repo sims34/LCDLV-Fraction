@@ -12,8 +12,13 @@ public class Fraction {
     }
 
     public Fraction(int numerateur, int denominateur) {
-        this.numerateur = numerateur;
-        this.denominateur = denominateur;
+        if (denominateur < 0) {
+            this.numerateur = -numerateur;
+            this.denominateur = - denominateur;
+        } else {
+            this.numerateur = numerateur;
+            this.denominateur = denominateur;
+        }
     }
 
     public Fraction addition(Fraction f1) {
