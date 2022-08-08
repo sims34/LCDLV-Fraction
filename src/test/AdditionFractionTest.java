@@ -13,7 +13,7 @@ class AdditionFractionTest {
         //When
         Fraction result = zero.addition(zero);
         //Then
-        Assertions.assertEquals(zero.getNumerateur(), result.getNumerateur());
+        Assertions.assertEquals(zero, result);
     }
 
     @Test
@@ -24,7 +24,7 @@ class AdditionFractionTest {
         //When
         Fraction result = zero.addition(un);
         //Then
-        Assertions.assertEquals(un.getNumerateur(), result.getNumerateur());
+        Assertions.assertEquals(un, result);
     }
 
     @Test
@@ -35,7 +35,7 @@ class AdditionFractionTest {
         //When
         Fraction result = un.addition(zero);
         //Then
-        Assertions.assertEquals(un.getNumerateur(), result.getNumerateur());
+        Assertions.assertEquals(un, result);
     }
 
     @Test
@@ -45,7 +45,7 @@ class AdditionFractionTest {
         //When
         Fraction result = un.addition(un);
         //Then
-        Assertions.assertEquals(new Fraction(2).getNumerateur(), result.getNumerateur());
+        Assertions.assertEquals(new Fraction(2), result);
     }
 
     @Test
@@ -56,7 +56,7 @@ class AdditionFractionTest {
         //When
         Fraction result = un.addition(deux);
         //Then
-        Assertions.assertEquals(new Fraction(3).getNumerateur(), result.getNumerateur());
+        Assertions.assertEquals(new Fraction(3), result);
     }
 
     @Test
@@ -67,19 +67,17 @@ class AdditionFractionTest {
         //When
         Fraction result = deux.addition(un);
         //Then
-        Assertions.assertEquals(new Fraction(3).getNumerateur(), result.getNumerateur());
+        Assertions.assertEquals(new Fraction(3), result);
     }
 
     @Test
     void sommeFractionMemeDenominateur() {
-
         Fraction f1 = new Fraction(3,4);
         Fraction f2 = new Fraction(2,4);
 
         Fraction result = f1.addition(f2);
 
-        Assertions.assertEquals(5,result.getNumerateur());
-        Assertions.assertEquals(4,result.getDenominateur());
+        Assertions.assertEquals(new Fraction(5, 4), result);
     }
 
 
