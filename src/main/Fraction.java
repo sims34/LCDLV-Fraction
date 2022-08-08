@@ -13,18 +13,25 @@ public class Fraction {
 
     public Fraction(int numerateur, int denominateur) {
         if (denominateur == 0) throw new RuntimeException("Dénominateur ne peut pas être nul");
-        if (denominateur < 0) {
-            this.numerateur = -numerateur;
-            this.denominateur = - denominateur;
-        } else {
-            this.numerateur = numerateur;
-            this.denominateur = denominateur;
-        }
+        this.numerateur = numerateur;
+        this.denominateur = denominateur;
         this.simplification();
     }
 
     public Fraction addition(Fraction f1) {
         return new Fraction(f1.getNumerateur() * this.getDenominateur() + this.getNumerateur() * f1.getDenominateur(), f1.getDenominateur() * this.getDenominateur());
+    }
+
+    private int determineSign(){
+        int counter = 0;
+
+        if(this.numerateur < 0) {
+            counter ++;
+        } if(this.denominateur < 0) {
+            counter ++;
+        }
+
+        return (counter % 2 == 0) ? 1 : -1;
     }
 
     @Override
@@ -41,18 +48,18 @@ public class Fraction {
         return numerateur + "/" + denominateur;
     }
 
-    public int getNumerateur() {
+    int getNumerateur() {
         return numerateur;
     }
 
-    public int getDenominateur() {
+    int getDenominateur() {
         return denominateur;
     }
 
     private void simplification() {
         int pgcd = this.getPGCD();
-        this.numerateur = this.getNumerateur() / pgcd;
-        this.denominateur = this.getDenominateur() / pgcd;
+        this.numerateur = this.determineSign() * Math.abs(this.getNumerateur()) / pgcd;
+        this.denominateur = Math.abs(this.getDenominateur()) / pgcd;
     }
 
     private int getPGCD() {
