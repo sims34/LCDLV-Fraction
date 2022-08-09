@@ -30,4 +30,10 @@ public class MultiplicationFractionTest {
         Assertions.assertEquals(new Fraction(1), result);
     }
 
+    @Test
+    void zeroParUnTier() {
+        Fraction result = new Fraction(0).multiplier(new Fraction(1, 3));
+        Assertions.assertEquals(new Fraction(0), result);
+    }
+
 }
