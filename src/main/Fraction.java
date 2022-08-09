@@ -62,6 +62,6 @@ public class Fraction {
     }
 
     public Fraction diviser(Fraction fraction) {
-        return this.multiplier(new Fraction(fraction.getDenominateur(), getNumerateur()));
+        return this.multiplier(new Fraction(fraction.getDenominateur(), fraction.getNumerateur()));
     }
 }
