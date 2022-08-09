@@ -38,8 +38,16 @@ public class MultiplicationFractionTest {
 
     @Test
     void deuxParDeux() {
-        Fraction result = new Fraction(2).multiplier(new Fraction(2));
+        Fraction deux = new Fraction(2);
+        Fraction result = deux.multiplier(deux);
         Assertions.assertEquals(new Fraction(4), result);
+    }
+
+    @Test
+    void deuxParMoinsDeux() {
+        Fraction deux = new Fraction(2);
+        Fraction resultNegatif = deux.multiplier(new Fraction(-2));
+        Assertions.assertEquals(new Fraction(-4), resultNegatif);
     }
 
 }
