@@ -52,4 +52,8 @@ public class Fraction {
         this.numerateur = this.determineSign() * Math.abs(this.getNumerateur()) / pgcd;
         this.denominateur = Math.abs(this.getDenominateur()) / pgcd;
     }
+
+    public Fraction multiplier(Fraction fraction) {
+        return this;
+    }
 }
