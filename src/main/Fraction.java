@@ -1,7 +1,5 @@
 package main;
 
-import java.math.BigInteger;
-
 public class Fraction {
 
     private int numerateur;
@@ -50,12 +48,8 @@ public class Fraction {
     }
 
     private void simplification() {
-        int pgcd = this.getPGCD();
+        int pgcd = FractionToolBox.getPGCD(this);
         this.numerateur = this.determineSign() * Math.abs(this.getNumerateur()) / pgcd;
         this.denominateur = Math.abs(this.getDenominateur()) / pgcd;
-    }
-
-    private int getPGCD() {
-        return BigInteger.valueOf(this.getNumerateur()).gcd(BigInteger.valueOf(this.getDenominateur())).intValue();
     }
 }
