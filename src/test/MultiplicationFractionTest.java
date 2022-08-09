@@ -50,4 +50,10 @@ public class MultiplicationFractionTest {
         Assertions.assertEquals(new Fraction(-4), resultNegatif);
     }
 
+    @Test
+    void memeDenominateur() {
+        Fraction result = new Fraction(1, 4).multiplier(new Fraction(3, 4));
+        Assertions.assertEquals(new Fraction(3, 16), result);
+    }
+
 }
