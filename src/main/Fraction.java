@@ -62,6 +62,9 @@ public class Fraction {
     }
 
     public Fraction diviser(Fraction fraction) {
+        if (fraction.getNumerateur() == 0) {
+            throw new ArithmeticException("Division par zero impossible");
+        }
         return this.multiplier(new Fraction(fraction.getDenominateur(), fraction.getNumerateur()));
     }
 }
