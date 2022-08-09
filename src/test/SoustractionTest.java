@@ -52,4 +52,10 @@ class SoustractionTest {
         Fraction result = new Fraction(4, 6).soustraction(new Fraction(2, 7));
         Assertions.assertEquals(new Fraction(8, 21), result);
     }
+
+    @Test
+    void denominateurDifferentsNégatifs() {
+        Fraction result = new Fraction(-1, 3).soustraction(new Fraction(12, 9));
+        Assertions.assertEquals(new Fraction(-5, 3), result);
+    }
 }
