@@ -39,11 +39,11 @@ public class Fraction {
         return numerateur + "/" + denominateur;
     }
 
-    int getNumerateur() {
+    public int getNumerateur() {
         return numerateur;
     }
 
-    int getDenominateur() {
+    public int getDenominateur() {
         return denominateur;
     }
 

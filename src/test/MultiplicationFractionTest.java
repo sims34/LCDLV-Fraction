@@ -56,4 +56,10 @@ public class MultiplicationFractionTest {
         Assertions.assertEquals(new Fraction(3, 16), result);
     }
 
+    @Test
+    void simplification() {
+        Fraction result = new Fraction(2, 3).multiplier(new Fraction(1, 2));
+        Assertions.assertEquals(1, result.getNumerateur());
+        Assertions.assertEquals(3, result.getDenominateur());
+    }
 }
