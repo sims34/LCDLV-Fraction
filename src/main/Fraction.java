@@ -57,6 +57,6 @@ public class Fraction {
         if (fraction.getNumerateur() == 0) {
             return new Fraction(0);
         }
-        return this;
+        return new Fraction(this.getNumerateur() * fraction.getNumerateur());
     }
 }

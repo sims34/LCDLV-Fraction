@@ -36,4 +36,10 @@ public class MultiplicationFractionTest {
         Assertions.assertEquals(new Fraction(0), result);
     }
 
+    @Test
+    void deuxParDeux() {
+        Fraction result = new Fraction(2).multiplier(new Fraction(2));
+        Assertions.assertEquals(new Fraction(4), result);
+    }
+
 }
