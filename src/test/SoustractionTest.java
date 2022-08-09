@@ -12,5 +12,9 @@ class SoustractionTest {
         Assertions.assertEquals(new Fraction(0), result);
     }
 
-
+    @Test
+    void zeroMoinsUn() {
+        Fraction result = new Fraction(0).soustraction(new Fraction(1));
+        Assertions.assertEquals(new Fraction(-1), result);
+    }
 }
