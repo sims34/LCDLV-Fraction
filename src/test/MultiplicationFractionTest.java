@@ -11,4 +11,17 @@ public class MultiplicationFractionTest {
         Fraction result = new Fraction(0).multiplier(new Fraction(0));
         Assertions.assertEquals(new Fraction(0), result);
     }
+
+    @Test
+    void zeroParUn() {
+        Fraction result = new Fraction(0).multiplier(new Fraction(1));
+        Assertions.assertEquals(new Fraction(0), result);
+    }
+
+    @Test
+    void UnParZero() {
+        Fraction result = new Fraction(1).multiplier(new Fraction(0));
+        Assertions.assertEquals(new Fraction(0), result);
+    }
+
 }

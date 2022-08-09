@@ -54,6 +54,6 @@ public class Fraction {
     }
 
     public Fraction multiplier(Fraction fraction) {
-        return this;
+        return new Fraction(0);
     }
 }
