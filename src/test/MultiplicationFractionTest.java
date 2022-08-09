@@ -24,4 +24,10 @@ public class MultiplicationFractionTest {
         Assertions.assertEquals(new Fraction(0), result);
     }
 
+    @Test
+    void unParUn() {
+        Fraction result = new Fraction(1).multiplier(new Fraction(1));
+        Assertions.assertEquals(new Fraction(1), result);
+    }
+
 }
