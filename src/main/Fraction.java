@@ -54,9 +54,6 @@ public class Fraction {
     }
 
     public Fraction multiplier(Fraction fraction) {
-        if (fraction.getNumerateur() == 0) {
-            return new Fraction(0);
-        }
         return new Fraction(this.getNumerateur() * fraction.getNumerateur());
     }
 }
