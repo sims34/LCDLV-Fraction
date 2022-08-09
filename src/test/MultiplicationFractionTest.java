@@ -62,4 +62,11 @@ public class MultiplicationFractionTest {
         Assertions.assertEquals(1, result.getNumerateur());
         Assertions.assertEquals(3, result.getDenominateur());
     }
+
+    @Test
+    void simplificationNegative() {
+        Fraction resultNegatif = new Fraction(-5, 6).multiplier(new Fraction(-2, 2));
+        Assertions.assertEquals(5, resultNegatif.getNumerateur());
+        Assertions.assertEquals(6, resultNegatif.getDenominateur());
+    }
 }
