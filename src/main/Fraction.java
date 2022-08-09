@@ -56,4 +56,8 @@ public class Fraction {
     public Fraction multiplier(Fraction fraction) {
         return new Fraction(this.getNumerateur() * fraction.getNumerateur(), this.getDenominateur() * fraction.getDenominateur());
     }
+
+    public Fraction soustraction(Fraction fraction) {
+        return this.addition(fraction.multiplier(new Fraction(-1)));
+    }
 }
