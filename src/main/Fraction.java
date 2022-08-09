@@ -60,4 +60,8 @@ public class Fraction {
     public Fraction soustraction(Fraction fraction) {
         return this.addition(fraction.multiplier(new Fraction(-1)));
     }
+
+    public Fraction diviser(Fraction fraction) {
+        return this.multiplier(new Fraction(fraction.getDenominateur(), getNumerateur()));
+    }
 }
